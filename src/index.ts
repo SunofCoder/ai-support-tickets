@@ -1,12 +1,11 @@
 
 import { readFile } from "node:fs/promises";
-import type { SupportTicket } from "./types/support";
-import { classifyTicket } from "./support/classify";
-import { troubleshootTicket } from "./support/troubleshoot";
-import { evaluateEscalation } from "./support/escalate";
-import { generateCustomerResponse } from "./support/response";
-
-
+import type { SupportTicket } from "./types/support.js";
+import { classifyTicket } from "./support/classify.js";
+import { troubleshootTicket } from "./support/troubleshoot.js";
+import { evaluateEscalation } from "./support/escalate.js";
+import { generateCustomerResponse } from "./support/response.js";
+import { mockAnalyzeTicket } from "./ai/mock.js";
 
 async function loadTicket(): Promise<SupportTicket> {
   const file = await readFile("examples/email-delivery.json", "utf-8");
@@ -16,6 +15,13 @@ async function loadTicket(): Promise<SupportTicket> {
 
 async function main() {
   const ticket = await loadTicket();
+  console.log("\n=== AI ANALYSIS (MOCK) ===");
+
+const aiAnalysis = mockAnalyzeTicket(ticket);
+
+console.log("Category:", aiAnalysis.category);
+console.log("Priority:", aiAnalysis.priority);
+console.log("Summary:", aiAnalysis.summary);
 
   console.log("\n=== SUPPORT TICKET ===");
   console.log("Customer:", ticket.customer);

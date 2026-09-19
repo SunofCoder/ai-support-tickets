@@ -1,5 +1,5 @@
-import type { SupportTicket } from "../types/support";
-import type { TicketClassification } from "./classify";
+import type { SupportTicket } from "../types/support.js";
+import type { TicketClassification } from "./classify.js";
 
 export interface EscalationResult {
   required: boolean;

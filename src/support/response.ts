@@ -1,7 +1,7 @@
-import type { SupportTicket } from "../types/support";
-import type { TicketClassification } from "./classify";
-import type { TroubleshootingResult } from "./troubleshoot";
-import type { EscalationResult } from "./escalate";
+import type { SupportTicket } from "../types/support.js";
+import type { TicketClassification } from "./classify.js";
+import type { TroubleshootingResult } from "./troubleshoot.js";
+import type { EscalationResult } from "./escalate.js";
 
 export function generateCustomerResponse(
   ticket: SupportTicket,

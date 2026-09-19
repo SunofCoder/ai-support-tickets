@@ -1,4 +1,4 @@
-import type { SupportTicket } from "../types/support";
+import type { SupportTicket } from "../types/support.js";
 
 export interface TroubleshootingResult {
   likelyCauses: string[];

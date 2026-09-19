@@ -1,4 +1,4 @@
-import type { SupportTicket, TicketCategory, Priority } from "../types/support";
+import type { SupportTicket, TicketCategory, Priority } from "../types/support.js";
 
 export interface TicketClassification {
   category: TicketCategory;
